@@ -5,20 +5,21 @@ import tensorflow as tf
 import tensorflow_transform as tft 
 
 CATEGORICAL_FEATURES = {
-    "InternetService": 3,
-    "SeniorCitizen": 2,
-    "PaperlessBilling": 2,
-    "Partner": 2,
-    "PhoneService": 2,
-    "StreamingTV": 3,
-    "gender":2
+    "person_home_ownership": 3,
+    "loan_intent": 2,
+    "loan_grade": 7,
+    "loan_status": 3
 }
 NUMERICAL_FEATURES = [
-    "MonthlyCharges",
-    "TotalCharges",
-    "tenure"
+    "person_age",
+    "person_income",
+    "person_emp_length",
+    "loan_amnt",
+    "loan_int_rate",
+    "loan_percent_income",
+    "cb_person_cred_hist_length"
 ]
-LABEL_KEY = "Churn"
+LABEL_KEY = "cb_person_default_on_file"
 
 def transformed_name(key):
     """Renaming transformed features"""
