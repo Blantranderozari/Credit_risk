@@ -5,10 +5,9 @@ import tensorflow as tf
 import tensorflow_transform as tft 
 
 CATEGORICAL_FEATURES = {
-    "person_home_ownership": 3,
-    "loan_intent": 2,
-    "loan_grade": 7,
-    "loan_status": 3
+    "person_home_ownership": 5,
+    "loan_intent": 7,
+    "loan_grade": 8
 }
 NUMERICAL_FEATURES = [
     "person_age",
@@ -16,6 +15,7 @@ NUMERICAL_FEATURES = [
     "person_emp_length",
     "loan_amnt",
     "loan_int_rate",
+    "loan_status",
     "loan_percent_income",
     "cb_person_cred_hist_length"
 ]
