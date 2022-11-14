@@ -120,7 +120,7 @@ def init_components(
     ]
 
     eval_config = tfma.EvalConfig(
-        model_specs=[tfma.ModelSpec(label_key='Churn')],
+        model_specs=[tfma.ModelSpec(label_key='cb_person_default_on_file')],
         slicing_specs=slicing_specs,
         metrics_specs=metrics_specs
     )
