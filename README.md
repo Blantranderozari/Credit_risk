@@ -3,11 +3,11 @@ Submission Proyek Akhir MLOps: Pengembangan dan Pengoperasian Sistem Machine Lea
 
 |                         | Deskripsi |
 | ----------------------- | --------- |
-| Dataset                 |     [Rice image Database](https://www.kaggle.com/datasets/muratkokludataset/rice-image-dataset) |
-| Masalah                 |       Apakah bisa menentukan jenis     |
+| Dataset                 |     [Credit Risk](https://www.kaggle.com/datasets/laotse/credit-risk-dataset) |
+| Masalah                 |       Apakah bisa kita mendeteksi nasabah dengan potensi kredit bermasalah     |
 | Solusi machine learning |       Mendeteksi     |
 | Metode pengolahan       |           |
-| Arsitektur Model        |  CNN         |
+| Arsitektur Model        |  MLP         |
 | Metrik evaluasi         |           |
 | Performa model          |           |
 | Opsi deployment         |           |
