@@ -40,7 +40,7 @@ def get_model(show_summary=True):
 
     model = tf.keras.models.Model(inputs=input_features,outputs=outputs)
     model.compile(
-        optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),
+        optimizer=tf.keras.optimizers.Adam(learning_rate=0.01),
         loss="binary_crossentropy",
         metrics=[tf.keras.metrics.BinaryAccuracy()]
     )
@@ -125,7 +125,7 @@ def run_fn(fn_args):
         validation_data=eval_dataset,
         validation_steps=fn_args.eval_steps,
         callbacks=[tensorboard_callback],
-        epochs=10
+        epochs=20
     )
 
     signatures = {
