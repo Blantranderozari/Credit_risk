@@ -1,6 +1,7 @@
 FROM tensorflow/serving:2.8.0-rc1
 
 COPY ./output/serving_model /models/model-resiko-kredit
+COPY ./config /model_config
 
 ENV MODEL_BASE_PATH=/models
 ENV MODEL_NAME=model-resiko-kredit
