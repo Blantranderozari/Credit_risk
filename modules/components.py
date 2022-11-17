@@ -96,8 +96,7 @@ def init_components(
     slicing_specs=[
         tfma.SlicingSpec(),
         tfma.SlicingSpec(feature_keys=[
-            'person_home_ownership',
-            'loan_intent'
+            'person_home_ownership'
         ])
     ]
 
