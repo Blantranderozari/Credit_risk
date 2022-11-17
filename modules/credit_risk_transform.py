@@ -1,8 +1,8 @@
 """Transform module
 """
 
-import tensorflow as tf 
-import tensorflow_transform as tft 
+import tensorflow as tf
+import tensorflow_transform as tft
 
 CATEGORICAL_FEATURES = {
     "person_home_ownership": 5,
@@ -50,8 +50,7 @@ def preprocessing_fn(inputs):
 
     outputs = {}
 
-    for key in CATEGORICAL_FEATURES:
-        dim = CATEGORICAL_FEATURES[key]
+    for key, dim in CATEGORICAL_FEATURES.items():
         int_value = tft.compute_and_apply_vocabulary(
             inputs[key], top_k=dim + 1
         )
@@ -62,10 +61,6 @@ def preprocessing_fn(inputs):
     for feature in NUMERICAL_FEATURES:
         outputs[transformed_name(feature)] = tft.scale_to_0_1(inputs[feature])
 
-
     outputs[transformed_name(LABEL_KEY)] = tf.cast(inputs[LABEL_KEY],tf.int64)
 
     return outputs
-
-    
-    
