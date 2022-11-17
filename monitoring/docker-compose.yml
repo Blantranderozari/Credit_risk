@@ -1,0 +1,25 @@
+version: '3.6'
+
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    user: "1000:1000"
+    ports: 
+      - "9090:9090"
+    volumes:
+      - "./prometheus.yml:/etc/prometheus/prometheus.yml"
+      - "/tmp/prometheus-data:/prometheus"
+    restart: unless-stopped
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+
+  grafana:
+    image: grafana/grafana:8.2.0-ubuntu
+    container_name: grafana
+    user: "1000"
+    ports:
+      - "3000:3000"
+    volumes:
+      - "/tmp/grafana-data:/var/lib/grafana"
+    restart: unless-stopped
