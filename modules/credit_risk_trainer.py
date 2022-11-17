@@ -16,7 +16,7 @@ from credit_risk_transform import (
 
 def get_model(show_summary=True):
     """
-    This function defines a Keras model and returns the model as a 
+    This function defines a Keras model and returns the model as a
     Keras object
     """
 
@@ -27,7 +27,7 @@ def get_model(show_summary=True):
             tf.keras.Input(shape=(dim + 1), name=transformed_name(key))
         )
 
-    for feature in NUMERICAL_FEATURES: 
+    for feature in NUMERICAL_FEATURES:
         input_features.append(
             tf.keras.Input(shape=(1,), name=transformed_name(feature))
         )
@@ -47,7 +47,6 @@ def get_model(show_summary=True):
 
     if show_summary:
         model.summary()
-    
     return model
 
 def gzip_reader_fn(filenames):
@@ -80,11 +79,11 @@ def input_fn(file_pattern, tf_transform_output, batch_size=64):
     Args:
         file_pattern: input tfrecord file pattern
         tf_transform_output: A TFTransformOutput
-        batch_size: representing the number of consecutive elements of 
+        batch_size: representing the number of consecutive elements of
         returned dataset to combine
     Returns:
         A datasets that contains (features, indices) tuple where features
-        is dictionary of Tensors, and indices is a single Tensor of 
+        is dictionary of Tensors, and indices is a single Tensor of
         label indices
     """
     transformed_feature_spec = (
@@ -101,7 +100,7 @@ def input_fn(file_pattern, tf_transform_output, batch_size=64):
 
     return dataset
 
-# TFX Trainder will call this function
+# TFX Trainer will call this function
 def run_fn(fn_args):
     """Train the model based on given args
     Args:
