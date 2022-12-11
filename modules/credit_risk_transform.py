@@ -52,14 +52,14 @@ def preprocessing_fn(inputs):
 
     for key, dim in CATEGORICAL_FEATURES.items():
         int_value = tft.compute_and_apply_vocabulary(
-            inputs[key], top_k=dim + 1
+            inputs[key], top_k=dim
         )
         outputs[transformed_name(key)] = convert_num_to_one_hot(
-            int_value, num_labels=dim + 1
+            int_value, num_labels=dim
         )
 
     for feature in NUMERICAL_FEATURES:
-        outputs[transformed_name(feature)] = tft.scale_to_0_1(inputs[feature])
+        outputs[transformed_name(feature)] = tft.scale_to_z_score(inputs[feature])
 
     outputs[transformed_name(LABEL_KEY)] = tf.cast(inputs[LABEL_KEY],tf.int64)
 
